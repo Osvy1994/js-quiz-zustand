@@ -1,0 +1,20 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: 'standard-with-typescript',
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: { project: './tsconfig.json' },
+  plugins: ['react-refresh'],
+  rules: {
+    'react-refresh/only-export-components': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    'no-trailing-spaces': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    'no-multiple-empty-lines': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'eol-last': 'off',
+  },
+}
