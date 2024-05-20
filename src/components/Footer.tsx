@@ -1,4 +1,4 @@
-import { useQuestionsStore } from './store/questions'
+import { useQuestionsStore } from '../store/questions'
 
 export function Footer() {
   const questions = useQuestionsStore(state => state.questions)
@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <footer style={{ marginTop: '16px' }}>
-      <strong>{`✅${correct} correct ❌${incorrect} incorrect ❓${unanswered} unanswered`}</strong>
+      <strong>{`✅Correct:${correct} ❌Incorrect: ${incorrect} ❓Unanswered: ${unanswered}`}</strong>
     </footer>
   )
 }

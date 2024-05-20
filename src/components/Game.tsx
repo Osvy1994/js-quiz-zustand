@@ -8,12 +8,13 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useQuestionsStore } from './store/questions.ts'
-import { type Question as QuestionType } from './types.ts'
+import { useQuestionsStore } from '../store/questions.ts'
+import { type Question as QuestionType } from '../types.ts'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { gradientDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material'
 import { Footer } from './Footer.tsx'
+import { Reset } from './Reset.tsx'
 
 const getBackgroundColor = (info: QuestionType, index: number) => {
   const { userSelectedAnswer, correctAnswer } = info
@@ -69,7 +70,6 @@ export function Game() {
   const goPreviousQuestion = useQuestionsStore(
     state => state.goPreviousQuestion,
   )
-  console.log(questions)
 
   const questionInfo = questions[currentQuestion]
   return (
@@ -96,6 +96,7 @@ export function Game() {
       </Stack>
       <Question info={questionInfo} />
       <Footer />
+      <Reset />
     </div>
   )
 }
